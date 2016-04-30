@@ -4,7 +4,7 @@
 #
 Name     : hgtools
 Version  : 6.3
-Release  : 9
+Release  : 10
 URL      : https://pypi.python.org/packages/source/h/hgtools/hgtools-6.3.zip
 Source0  : https://pypi.python.org/packages/source/h/hgtools/hgtools-6.3.zip
 Summary  : Classes and setuptools plugin for Mercurial repositories
