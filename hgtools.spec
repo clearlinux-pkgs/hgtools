@@ -4,13 +4,15 @@
 #
 Name     : hgtools
 Version  : 6.3
-Release  : 14
+Release  : 15
 URL      : https://pypi.python.org/packages/source/h/hgtools/hgtools-6.3.zip
 Source0  : https://pypi.python.org/packages/source/h/hgtools/hgtools-6.3.zip
 Summary  : Classes and setuptools plugin for Mercurial repositories
 Group    : Development/Tools
 License  : MIT
 Requires: hgtools-python
+BuildRequires : pbr
+BuildRequires : pip
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
@@ -34,13 +36,16 @@ python components for the hgtools package.
 %setup -q -n hgtools-6.3
 
 %build
+export LANG=C
+export SOURCE_DATE_EPOCH=1484549553
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
+export SOURCE_DATE_EPOCH=1484549553
 rm -rf %{buildroot}
-python2 setup.py build -b py2 install --root=%{buildroot}
-python3 setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
