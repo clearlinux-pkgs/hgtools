@@ -1,5 +1,5 @@
 PKG_NAME := hgtools
-URL := https://pypi.python.org/packages/source/h/hgtools/hgtools-6.3.zip
+URL := http://pypi.debian.net/hgtools/hgtools-6.5.2.tar.gz
 
 
 include ../common/Makefile.common
