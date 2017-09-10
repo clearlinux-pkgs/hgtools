@@ -4,12 +4,13 @@
 #
 Name     : hgtools
 Version  : 6.5.2
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/hgtools/hgtools-6.5.2.tar.gz
 Source0  : http://pypi.debian.net/hgtools/hgtools-6.5.2.tar.gz
 Summary  : Classes and setuptools plugin for Mercurial and Git repositories
 Group    : Development/Tools
 License  : MIT
+Requires: hgtools-legacypython
 Requires: hgtools-python
 Requires: pytest
 BuildRequires : pbr
@@ -21,6 +22,7 @@ BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : setuptools_scm
+BuildRequires : setuptools_scm-python
 BuildRequires : tox
 BuildRequires : virtualenv
 
@@ -28,9 +30,18 @@ BuildRequires : virtualenv
 .. image:: https://img.shields.io/pypi/v/hgtools.svg
 :target: https://pypi.org/project/hgtools
 
+%package legacypython
+Summary: legacypython components for the hgtools package.
+Group: Default
+
+%description legacypython
+legacypython components for the hgtools package.
+
+
 %package python
 Summary: python components for the hgtools package.
 Group: Default
+Requires: hgtools-legacypython
 
 %description python
 python components for the hgtools package.
@@ -40,13 +51,16 @@ python components for the hgtools package.
 %setup -q -n hgtools-6.5.2
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1492438888
+export SOURCE_DATE_EPOCH=1505003747
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1492438888
+export SOURCE_DATE_EPOCH=1505003747
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -57,7 +71,10 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
