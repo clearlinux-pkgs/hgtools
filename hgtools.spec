@@ -4,7 +4,7 @@
 #
 Name     : hgtools
 Version  : 6.5.2
-Release  : 24
+Release  : 25
 URL      : http://pypi.debian.net/hgtools/hgtools-6.5.2.tar.gz
 Source0  : http://pypi.debian.net/hgtools/hgtools-6.5.2.tar.gz
 Summary  : Classes and setuptools plugin for Mercurial and Git repositories
