@@ -4,7 +4,7 @@
 #
 Name     : hgtools
 Version  : 8.1.1
-Release  : 30
+Release  : 31
 URL      : http://pypi.debian.net/hgtools/hgtools-8.1.1.tar.gz
 Source0  : http://pypi.debian.net/hgtools/hgtools-8.1.1.tar.gz
 Summary  : Classes and setuptools plugin for Mercurial and Git repositories
