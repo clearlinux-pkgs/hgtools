@@ -4,7 +4,7 @@
 #
 Name     : hgtools
 Version  : 8.2.0
-Release  : 42
+Release  : 43
 URL      : https://files.pythonhosted.org/packages/83/e8/fc576b4a1664d1f170a8251f2774dcad9d577a3cd631c9185b7ed3675159/hgtools-8.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/83/e8/fc576b4a1664d1f170a8251f2774dcad9d577a3cd631c9185b7ed3675159/hgtools-8.2.0.tar.gz
 Summary  : Classes and setuptools plugin for Mercurial and Git repositories
